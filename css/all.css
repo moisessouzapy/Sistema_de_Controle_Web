@@ -1,0 +1,59 @@
+*{
+  width: 100%;
+}
+#container img {
+  width: 100px;
+  border-radius: 40px;
+  margin: auto;
+}
+#container h1 {
+  color: white;
+  text-align: center;
+}
+html,body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+.hero.is-success {
+  background: #f2f7fa;
+}
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
+}
+
+#main_principal{
+  background: gray;
+}
+.center {
+  text-align: center;
+}
+
+
+
+/* vendedor */
+#vendedor{
+  background-image: url('/img/vendedor1.png');
+}
+#vendedor h2 a{
+  color: black;
+}
+
+
+
+
+
+/* gerente */
+#gerente{
+  background-image: url('/img/gerente2.png');
+}
+#gerente h2 a{
+  color: black;
+}
