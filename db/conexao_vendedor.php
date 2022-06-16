@@ -1,7 +1,15 @@
 <?php
-define('HOST', '127.0.0.1');
-define('VENDEDOR', 'root');
-define('SENHA', '');#vendedor123
-define('DB', 'login');
- 
-$conexao = mysqli_connect(HOST, VENDEDOR, SENHA, DB) or die ('Não foi possível conectar');
+require '../vendor/autoload.php';
+include 'const_key.php';
+
+$key = new Keys;
+
+$user = $key->user();
+$password = $key->password();
+
+$client = new MongoDB\Client(
+    "mongodb+srv://".USER.":".PASSWORD."@sistema.o6tyt.mongodb.net/?retryWrites=true&w=majority"
+); 
+$db = $client->sistema_web->vendedor;
+
+?>
