@@ -1,19 +1,24 @@
 *{
   width: 100%;
 }
+a:link {
+  text-decoration: none;
+}
 #container img {
   width: 100px;
   border-radius: 40px;
   margin: auto;
 }
 #container h1 {
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 html,body {
   font-family: 'Open Sans', serif;
   font-size: 14px;
   font-weight: 300;
+  height: 100%;
+  width: 100%;
 }
 .hero.is-success {
   background: #f2f7fa;
@@ -38,6 +43,16 @@ p {
 
 
 
+
+
+
+
+
+
+
+
+
+
 /* vendedor */
 #vendedor{
   background-image: url('/img/vendedor1.png');
@@ -45,7 +60,9 @@ p {
 #vendedor h2 a{
   color: black;
 }
-
+.topo_vendedor{
+  text-align: center;
+}
 
 
 
@@ -54,6 +71,30 @@ p {
 #gerente{
   background-image: url('/img/gerente2.png');
 }
+.topo_gerente {
+  text-align: center;
+}
 #gerente h2 a{
   color: black;
+}
+
+.card_block{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 500px;
+}
+.card:hover{
+  background: white;
+  color: black;
+}
+.card_block h5 {
+  color: white;
+}
+.card {
+  margin: 60px;
+  background: black;
+}
+.card a{
+  text-decoration: none;
 }

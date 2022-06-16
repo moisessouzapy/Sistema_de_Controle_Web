@@ -1,9 +1,9 @@
 <body id="main_principal">
  <div class="main">
-     <nav class="navbar bg-dark">
+     <nav class="navbar bg-light">
       <div id="container" class="container-fluid">
         <img src="/img/vendedor2.jpg" alt="">
-        <h1>Avaliação</h1>
+        <h1>Cleber</h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -134,9 +134,7 @@
     </div>
     <div class="col-12">
       <button class="btn btn-primary" type="submit">Submit form</button>
-    </div>
   </form>
-</div>
 <script src="/js/validaendereco.js"></script>
 <script src="/js/mascaraCep.js"></script>
 </body>
