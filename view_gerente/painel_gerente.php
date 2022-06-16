@@ -4,11 +4,83 @@ include('../view/header.php');
 ?>
 
 <body id="gerente">
-    <div class="topo_gerente">
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/index.php" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">Gerente</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="logout_gerente.php">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+        <div class="topo_gerente">
         <h2 style="color:#fff;">Olá, <?php echo $_SESSION['usuario']; ?></h2>
     </div>
-    <div class="card_block row col-md-12">
-        <div class="hvr-float-shadow card bg-transparent" style="width: 20rem;">
+    
+    <div class="card_block">
+        <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
             <a href="/view_gerente/rota/controle_vendas_gerente.php">
                 <h5 class="card-title center">Controle de Venda</h5>
                 <img src="../img/sell.png" class="card-img-center" alt="...">
@@ -16,7 +88,7 @@ include('../view/header.php');
             </a>
             </div>
         </div>
-        <div class="hvr-float-shadow card bg-transparent" style="width: 23rem;">
+        <div class="hvr-float-shadow card bg-transparent" style="width: 20rem;">
             <a href="/view_gerente/rota/tela_gerencial_gerente.php">
                 <h5 class="card-title center">Tela Gerencial</h5>
                 <img src="../img/gerencia.png" class="card-img-center" alt="...">
@@ -24,7 +96,7 @@ include('../view/header.php');
             </a>
             </div>
         </div>
-        <div class="hvr-float-shadow card bg-transparent" style="width: 20rem;">
+        <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
             <a href="/view_gerente/rota/consulta_pedidos_gerente.php">
                 <h5 class="card-title center">Consulta de Pedidos</h5>
                 <img src="../img/pedido.png" class="card-img-center" alt="...">
@@ -34,9 +106,10 @@ include('../view/header.php');
         </div>
         </div>
     </div>
-    <div class="sair center">
-        <h2><a href="logout_gerente.php">Sair</a></h2>
+        </div>
     </div>
+</div>
+    
 </body>
 
 </html>
