@@ -1,9 +1,29 @@
-<?php
-include('verificar_login_vendedor.php');
-include('../view/header.php');
-?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<body id="vendedor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/controle.css">
+    <title>Cadastrar produtos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+<!-- DATATABLES -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+<input value="Adicionar" class="btn btn-lg btn-primary center" type="button"></input>
+<input value="Editar" class="btn btn-lg btn-primary center" type="button"></input>       
+<input value="Excluir" class="btn btn-lg btn-primary center" type="button"></input>
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -75,41 +95,70 @@ include('../view/header.php');
             </div>
         </div>
         <div class="col py-3">
-        <div class="topo_gerente">
-        <h2 style="color:#fff;">Olá, <?php echo $_SESSION['usuario']; ?></h2>
-    </div>
+            <h1>Cadastro de produtos</h1>
+        <hr>
     
-    <div class="card_block">
-        <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
-            <a href="/view_vendedor/ultimas_vendas.php">
-                <h5 class="card-title center">Ultimas vendas</h5>
-                <img src="../img/ultimasvendas.jpg" class="card-img-center" alt="...">
-                <div class="card-body">
-            </a>
-            </div>
-        </div>
-        <div class="hvr-float-shadow card bg-transparent" style="width: 20rem;">
-            <a href="/view_vendedor/cadastrar_produto.php">
-                <h5 class="card-title center">Cadastrar</h5>
-                <img src="../img/cadastrar.png" class="card-img-center" alt="...">
-                <div class="card-body">
-            </a>
-            </div>
-        </div>
-        <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
-            <a href="/view_vendedor/tela_vendas.php">
-                <h5 class="card-title center">Tela de vendas</h5>
-                <img src="../img/vendas.png" class="card-img-center" alt="...">
-                <div class="card-body">
-            </a>
-            </div>
-        </div>
-        </div>
-    </div>
-        </div>
-    </div>
-</div>
+        <table>
+            <tr id="header">
+                <th>Produto</th>
+                <th>Codigo</th>
+                <th>Data</th>
+                <th>Valor</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td><?php echo 'levi';?> </td>
+                <td>123 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>1 </td>
     
+            </tr>
+            <tr>
+                <td>cleber </td>
+                <td>321 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>2 </td>
+    
+            </tr>
+            <tr>
+                <td>janael </td>
+                <td>123 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>3 </td>
+    
+            </tr>
+            <tr>
+                <td>vini </td>
+                <td>123 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>4 </td>
+    
+            </tr>
+            <tr>
+                <td>gustavo </td>
+                <td>123 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>5 </td>
+    
+            </tr>
+            <tr>
+                <td>erik </td>
+                <td>123 </td>
+                <td>01/22 </td>
+                <td>10R$ </td>
+                <td>6 </td>
+            </tr>
+    
+        </table>
+        </div>
+    </div>
+</div> 
+        
 </body>
 
 </html>
