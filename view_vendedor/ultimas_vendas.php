@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/controle.css">
-    <title>Consulta de produtos</title>
+    <title>Olhar ultimas vendas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
 <!-- CSS only -->
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="col py-3">
-            <h1>Consulta de produtos</h1>
+            <h1>Ultimas vendas</h1>
         <hr>
     
         <table>
