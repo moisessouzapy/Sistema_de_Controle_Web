@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/controle.css">
+    <link rel="stylesheet" href="rota/css/controle.css">
     <title>Table</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
@@ -96,121 +96,39 @@
                 <hr>
                 <?php
                 include 'conexao_produtos.php';
-                echo $db;
                 $result = $db->find()->toArray();
-
-                foreach ($result as $value) {
-                    var_dump($value->fornecedor);
-                }
-
                 ?>
                 <table>
                     <thead>
                         <tr id="header">
-                            <!-- <th><?php echo implode('<th></th>', array_keys(current($result))) ?></th> -->
+                            <th>id</th>
                             <th>Produto</th>
-                            <th>Codigo</th>
-                            <th>Data</th>
-                            <th>Valor</th>
+                            <th>Fornecedor</th>
+                            <th>Custo do Produto</th>
+                            <th>Valor de Venda</th>
                             <th>Quantidade</th>
                         </tr>
                     </thead>
                     <tbody>
-                       
+
 
                     </tbody>
-                    <tr>
-                     
 
-                    </tr>
+                    <?php foreach ($result as $value) : ?>
+                        <tr>
+                            <td><?php echo substr($value->_id, -5); ?></td>
+                            <td><?php echo $value->nome; ?></td>
+                            <td><?php echo $value->fornecedor; ?></td>
+                            <td><?php echo number_format(floatval($value->custoProduto), 2); ?> </td>
+                            <td><?php echo number_format(floatval($value->valorVenda), 2); ?></td>
+                            <td><?php echo $value->estoque; ?></td>
 
-                <tr>
-                    <td>cleber </td>
-                    <td>321 </td>
-                    <td>01/22 </td>
-                    <td>10R$ </td>
-                    <td>2 </td>
-
-                </tr>
-                <tr>
-                    <td>janael </td>
-                    <td>123 </td>
-                    <td>01/22 </td>
-                    <td>10R$ </td>
-                    <td>3 </td>
-
-                </tr>
-                <tr>
-                    <td>vini </td>
-                    <td>123 </td>
-                    <td>01/22 </td>
-                    <td>10R$ </td>
-                    <td>4 </td>
-
-                </tr>
-                <tr>
-                    <td>gustavo </td>
-                    <td>123 </td>
-                    <td>01/22 </td>
-                    <td>10R$ </td>
-                    <td>5 </td>
-
-                </tr>
-                <tr>
-                    <td>erik </td>
-                    <td>123 </td>
-                    <td>01/22 </td>
-                    <td>10R$ </td>
-                    <td>6 </td>
-                </tr>
-
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
             </div>
         </div>
     </div>
-
-    <?php
-    
-foreach ($result as $value) {
-                                
-                           
-    echo "
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    nome
-                                </th>
-                                <th>
-                                    fornecedor
-                                </th> 
-                                 <th>       
-                                    valor
-                                </th>
-                                <th>       
-                                    estoque
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    {$value->nome}
-                                </td>
-                                  <td>
-                                    {$value->fornecedor}
-                                </td>
-                                 <td>
-                                    {$value->valorVenda}
-                                </td>
-                                                                 <td>
-                                    {$value->estoque}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>";
-    } 
-?>
 </body>
 
 </html>
