@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="rota/css/controle.css">
+    <link rel="stylesheet" href="css/controle.css">
     <title>Table</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
@@ -95,7 +95,7 @@
                 <h1>Controle de Vendas</h1>
                 <hr>
                 <?php
-                include 'conexao_produtos.php';
+                include '../../db/conexao_produtos.php';
                 $result = $db->find()->toArray();
                 ?>
                 <table>
