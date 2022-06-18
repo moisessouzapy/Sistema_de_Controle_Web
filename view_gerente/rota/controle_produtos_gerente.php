@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="col py-3">
-                <h1>Controle de Vendas</h1>
+                <h1>Controle de Produtos</h1>
                 <hr>
                 <?php
                 include '../../db/conexao_produtos.php';
@@ -107,24 +107,22 @@
                             <th>Custo do Produto</th>
                             <th>Valor de Venda</th>
                             <th>Quantidade</th>
+                            <th>Data do cadastro</th>
                         </tr>
                     </thead>
                     <tbody>
-
-
+                        <?php foreach ($result as $value) : ?>
+                            <tr>
+                                <td><?php echo substr($value->_id, -5); ?></td>
+                                <td><?php echo $value->nome; ?></td>
+                                <td><?php echo $value->fornecedor; ?></td>
+                                <td><?php echo number_format(floatval($value->custoProduto), 2); ?> </td>
+                                <td><?php echo number_format(floatval($value->valorVenda), 2); ?></td>
+                                <td><?php echo $value->estoque; ?></td>
+                                <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
-
-                    <?php foreach ($result as $value) : ?>
-                        <tr>
-                            <td><?php echo substr($value->_id, -5); ?></td>
-                            <td><?php echo $value->nome; ?></td>
-                            <td><?php echo $value->fornecedor; ?></td>
-                            <td><?php echo number_format(floatval($value->custoProduto), 2); ?> </td>
-                            <td><?php echo number_format(floatval($value->valorVenda), 2); ?></td>
-                            <td><?php echo $value->estoque; ?></td>
-
-                        </tr>
-                    <?php endforeach; ?>
                 </table>
             </div>
         </div>

@@ -82,7 +82,7 @@ include('../view/header.php');
     <div class="card_block">
         <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
             <a href="/view_gerente/rota/controle_produtos_gerente.php">
-                <h5 class="card-title center">Controle de Venda</h5>
+                <h5 class="card-title center">Controle de produtos</h5>
                 <img src="../img/sell.png" class="card-img-center" alt="...">
                 <div class="card-body">
             </a>
