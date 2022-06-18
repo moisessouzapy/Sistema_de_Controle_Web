@@ -119,7 +119,7 @@
                                 <td><?php echo "R$ " . number_format(floatval($value->custoProduto), 2); ?> </td>
                                 <td><?php echo "R$ " . number_format(floatval($value->valorVenda), 2); ?></td>
                                 <td><?php echo $value->estoque; ?></td>
-                                <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
+                                <td><?php echo $value->data?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

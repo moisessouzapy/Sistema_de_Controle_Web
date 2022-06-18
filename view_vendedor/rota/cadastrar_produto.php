@@ -101,29 +101,28 @@
                                 <form method="post" action="">
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Nome:</label>
-                                        <input type="text" class="form-control" id="nome" required>
+                                        <input type="text" class="form-control" id="nome" name="nome" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Fornecedor:</label>
-                                        <input type="text" class="form-control" id="fornecedor" required>
+                                        <input type="text" class="form-control" id="fornecedor" name="fornecedor" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Custo do Produto:</label>
-                                        <input type="text" class="form-control" id="custoProduto" required>
+                                        <input type="text" class="form-control" id="custoProduto" name="custoProduto" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Valor de venda:</label>
-                                        <input type="text" class="form-control" id="valorVenda" required>
+                                        <input type="text" class="form-control" id="valorVenda" name="valorVenda" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Estoque:</label>
-                                        <input type="text" class="form-control" id="Estoque" required>
+                                        <input type="text" class="form-control" id="Estoque" name="estoque" required>
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
                                         <input type="submit" class="btn btn-primary" value="Enviar" onclick="cadastrarProdutos();">
                                     </div>
-
                                 </form>
                             </div>
                         </div>
@@ -131,7 +130,6 @@
                 </div>
                 <hr>
                 <?php
-
                 include '../../db/conexao_produtos.php';
                 $result = $db->find()->toArray();
 
@@ -149,7 +147,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($result as $value) : ?>
+                        <?php foreach ($result as $value) : 
+                            //echo $value->valorVenda . "<br>";
+                            echo floatval($value->custoProduto->replace) . "<br>";
+                            ?>
                             <tr>
                                 <td><?php echo substr($value->_id, -5); ?></td>
                                 <td><?php echo $value->nome; ?></td>
@@ -157,7 +158,7 @@
                                 <td><?php echo "R$ " . number_format(floatval($value->custoProduto), 2, ',', ''); ?> </td>
                                 <td><?php echo "R$ " . number_format(floatval($value->valorVenda), 2, ",", ""); ?></td>
                                 <td><?php echo $value->estoque; ?></td>
-                                <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
+                                <td><?php echo $value->data; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -166,7 +167,8 @@
         </div>
     </div>
     <?php
-   
+    include 'functions.php';
+
     if (!empty($_POST['nome'])) {
 
         if (cadastrarProdutos($_POST)) { ?>
