@@ -81,7 +81,7 @@ include('../view/header.php');
     
     <div class="card_block">
         <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
-            <a href="/view_vendedor/ultimas_vendas.php">
+            <a href="/view_vendedor/rota/ultimas_vendas.php">
                 <h5 class="card-title center">Ultimas vendas</h5>
                 <img src="../img/ultimasvendas.jpg" class="card-img-center" alt="...">
                 <div class="card-body">
@@ -89,7 +89,7 @@ include('../view/header.php');
             </div>
         </div>
         <div class="hvr-float-shadow card bg-transparent" style="width: 20rem;">
-            <a href="/view_vendedor/cadastrar_produto.php">
+            <a href="/view_vendedor/rota/cadastrar_produto.php">
                 <h5 class="card-title center">Cadastrar</h5>
                 <img src="../img/cadastrar.png" class="card-img-center" alt="...">
                 <div class="card-body">
@@ -97,7 +97,7 @@ include('../view/header.php');
             </div>
         </div>
         <div class="hvr-float-shadow card bg-transparent" style="width: 18rem;">
-            <a href="/view_vendedor/tela_vendas.php">
+            <a href="/view_vendedor/rota/tela_vendas.php">
                 <h5 class="card-title center">Tela de vendas</h5>
                 <img src="../img/vendas.png" class="card-img-center" alt="...">
                 <div class="card-body">
