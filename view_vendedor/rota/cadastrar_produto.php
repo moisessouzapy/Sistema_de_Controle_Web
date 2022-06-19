@@ -148,15 +148,13 @@
                     </thead>
                     <tbody>
                         <?php foreach ($result as $value) : 
-                            //echo $value->valorVenda . "<br>";
-                            echo floatval($value->custoProduto->replace) . "<br>";
                             ?>
                             <tr>
                                 <td><?php echo substr($value->_id, -5); ?></td>
                                 <td><?php echo $value->nome; ?></td>
                                 <td><?php echo $value->fornecedor; ?></td>
-                                <td><?php echo "R$ " . number_format(floatval($value->custoProduto), 2, ',', ''); ?> </td>
-                                <td><?php echo "R$ " . number_format(floatval($value->valorVenda), 2, ",", ""); ?></td>
+                                <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?> </td>
+                                <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?></td>
                                 <td><?php echo $value->estoque; ?></td>
                                 <td><?php echo $value->data; ?></td>
                             </tr>
