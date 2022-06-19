@@ -117,8 +117,8 @@
                                     <?php foreach ($value->venda as $infoVenda) : echo "{$infoVenda->qnt} x {$infoVenda->prod_nome} <br>";
                                     endforeach; ?>
                                 </td>
-                                <td><?php echo "R$ " . $number_format(floatval($value->valor), 2,',', ''); ?></td>
-                                <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
+                                <td><?php echo "R$ ". number_format(floatval($value->valor), 2,',',''); ?></td>
+                                <td><?php echo $value->data ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

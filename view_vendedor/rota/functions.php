@@ -7,7 +7,7 @@ function cadastrarProdutos($dados)
 
     $nome = $dados['nome'];
     $data = new DateTime("now", new DateTimeZone('America/Bahia'));
-    $dt = $data->format('Y-m-d\TH:i:sO');
+    $dt = $data->format('d/m/Y H:i:s');
     $fornecedor = $dados['fornecedor'];
     $custoProduto = $dados['custoProduto'];
     $valorVenda = $dados['valorVenda'];

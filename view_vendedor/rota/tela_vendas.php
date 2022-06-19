@@ -96,64 +96,35 @@
         <div class="col py-3">
             <h1>Tela de vendas</h1>
         <hr>
-    
+        <?php
+                include '../../db/conexao_pedidos.php';
+                $result = $db->find()->toArray();
+                ?>
         <table>
-            <tr id="header">
-                <th>Produto</th>
-                <th>Codigo</th>
-                <th>Data</th>
-                <th>Valor</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td><?php echo 'levi';?> </td>
-                <td>123 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>1 </td>
-    
-            </tr>
-            <tr>
-                <td>cleber </td>
-                <td>321 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>2 </td>
-    
-            </tr>
-            <tr>
-                <td>janael </td>
-                <td>123 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>3 </td>
-    
-            </tr>
-            <tr>
-                <td>vini </td>
-                <td>123 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>4 </td>
-    
-            </tr>
-            <tr>
-                <td>gustavo </td>
-                <td>123 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>5 </td>
-    
-            </tr>
-            <tr>
-                <td>erik </td>
-                <td>123 </td>
-                <td>01/22 </td>
-                <td>10R$ </td>
-                <td>6 </td>
-            </tr>
-    
-        </table>
+                    <thead>
+                        <tr id="header">
+                            <th>Código do Pedido</th>
+                            <th>Produtos</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php foreach ($result as $value) : ?>
+                            <tr>
+                                <td> <?php echo substr($value->_id, -5); ?> </td>
+                                <td>
+                                    <?php foreach ($value->venda as $infoVenda) : echo "{$infoVenda->qnt} x {$infoVenda->prod_nome} <br>";
+                                    endforeach; ?>
+                                </td>
+                                <td><?php echo "R$ " . number_format(floatval($value->valor), 2, ',', ''); ?></td>
+                                <td><?php echo $value->data?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+
+                </table>
         </div>
     </div>
 </div> 
