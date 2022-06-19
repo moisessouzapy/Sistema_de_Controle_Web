@@ -183,8 +183,35 @@
     </div>
     <?php
     if (isset($_GET['delete'])) {
-        apagarProduto($_GET['delete']);
-    }
+      if(apagarProduto($_GET['delete'])) {
+        ?>
+
+            <script language='javascript'>
+                swal.fire({
+                    icon: "success",
+                    text: "Feito com Sucesso!",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "cadastrar_produto.php";
+                    }
+                });
+            </script>
+        <?php } else { ?>
+            <script language='javascript'>
+                swal.fire({
+                    icon: "error",
+                    text: "Ops! Ouve um erro.",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "cadastrar_produto.php";
+                    }
+                });
+            </script>
+    <?php }
+      };
+
     if (!empty($_POST['nome'])) {
 
         if (cadastrarProdutos($_POST)) { ?>
