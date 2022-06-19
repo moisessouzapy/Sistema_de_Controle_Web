@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pr-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/controle.css">
-    <title>Consulta de produtos</title>
+    <title>Table</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
     <!-- CSS only -->
@@ -92,42 +92,41 @@
                 </div>
             </div>
             <div class="col py-3">
-                <h1>Consulta de pedidos</h1>
+                <h1>Controle de Produtos</h1>
                 <hr>
                 <?php
-                include '../../db/conexao_pedidos.php';
+                include '../../db/conexao_produtos.php';
                 $result = $db->find()->toArray();
                 ?>
-
                 <table>
                     <thead>
                         <tr id="header">
-                            <th>Código do Pedido</th>
-                            <th>Produtos</th>
-                            <th>Valor</th>
-                            <th>Data</th>
+                            <th>id</th>
+                            <th>Produto</th>
+                            <th>Fornecedor</th>
+                            <th>Custo do Produto</th>
+                            <th>Valor de Venda</th>
+                            <th>Quantidade</th>
+                            <th>Data do cadastro</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php foreach ($result as $value) : ?>
                             <tr>
-                                <td> <?php echo substr($value->_id, -5); ?> </td>
-                                <td>
-                                    <?php foreach ($value->venda as $infoVenda) : echo "{$infoVenda->qnt} x {$infoVenda->prod_nome} <br>";
-                                    endforeach; ?>
-                                </td>
-                                <td><?php echo "R$ " . $number_format(floatval($value->valor), 2,',', ''); ?></td>
+                                <td><?php echo substr($value->_id, -5); ?></td>
+                                <td><?php echo $value->nome; ?></td>
+                                <td><?php echo $value->fornecedor; ?></td>
+                                <td><?php echo "R$ " . number_format(floatval($value->custoProduto), 2); ?> </td>
+                                <td><?php echo "R$ " . number_format(floatval($value->valorVenda), 2); ?></td>
+                                <td><?php echo $value->estoque; ?></td>
                                 <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

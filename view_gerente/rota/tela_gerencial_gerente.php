@@ -21,7 +21,6 @@
 </head>
 
 <body>   
-<input value="Excluir" class="btn btn-lg btn-primary center" type="button"></input>
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -94,6 +93,7 @@
         </div>
         <div class="col py-3">
             <h1>Tela Gerencial</h1>
+            
         <hr>
     
         <table>
@@ -103,6 +103,7 @@
                 <th>Data</th>
                 <th>Valor</th>
                 <th>Quantidade</th>
+                <th><input value="Excluir" class="btn btn-lg btn-primary center" type="button"></input></th>
             </tr>
             <tr>
                 <td><?php echo 'levi';?> </td>

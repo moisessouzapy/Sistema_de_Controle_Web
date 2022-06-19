@@ -5,22 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/controle.css">
-    <title>Consulta de produtos</title>
+    <title>Cadastrar produtos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
-
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
-
-    <!-- DATATABLES -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
+
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -92,42 +83,128 @@
                 </div>
             </div>
             <div class="col py-3">
-                <h1>Consulta de pedidos</h1>
+                <h1>Cadastro de produtos</h1>
+                <hr>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@cadastrar">Cadastrar produto</button>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cadastrar produto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nome:</label>
+                                        <input type="text" class="form-control" id="nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Fornecedor:</label>
+                                        <input type="text" class="form-control" id="fornecedor" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Custo do Produto:</label>
+                                        <input type="text" class="form-control" id="custoProduto" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Valor de venda:</label>
+                                        <input type="text" class="form-control" id="valorVenda" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Estoque:</label>
+                                        <input type="text" class="form-control" id="Estoque" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
+                                        <input type="submit" class="btn btn-primary" value="Enviar" onclick="cadastrarProdutos();">
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <hr>
                 <?php
-                include '../../db/conexao_pedidos.php';
-                $result = $db->find()->toArray();
-                ?>
 
+                include '../../db/conexao_produtos.php';
+                $result = $db->find()->toArray();
+
+                ?>
                 <table>
                     <thead>
                         <tr id="header">
-                            <th>Código do Pedido</th>
-                            <th>Produtos</th>
-                            <th>Valor</th>
-                            <th>Data</th>
+                            <th>id</th>
+                            <th>Produto</th>
+                            <th>Fornecedor</th>
+                            <th>Custo do Produto</th>
+                            <th>Valor de Venda</th>
+                            <th>Quantidade</th>
+                            <th>Data do cadastro</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php foreach ($result as $value) : ?>
                             <tr>
-                                <td> <?php echo substr($value->_id, -5); ?> </td>
-                                <td>
-                                    <?php foreach ($value->venda as $infoVenda) : echo "{$infoVenda->qnt} x {$infoVenda->prod_nome} <br>";
-                                    endforeach; ?>
-                                </td>
-                                <td><?php echo "R$ " . $number_format(floatval($value->valor), 2,',', ''); ?></td>
-                                <td><?php echo $value->data->toDateTime()->format('d/m/Y H:i:s'); ?></td>
+                                <td><?php echo substr($value->_id, -5); ?></td>
+                                <td><?php echo $value->nome; ?></td>
+                                <td><?php echo $value->fornecedor; ?></td>
+                                <td><?php echo "R$ " . number_format(floatval($value->custoProduto), 2, ',', ''); ?> </td>
+                                <td><?php echo "R$ " . number_format(floatval($value->valorVenda), 2, ",", ""); ?></td>
+                                <td><?php echo $value->estoque; ?></td>
+                                <td><?php echo $value->data; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
     </div>
+    <?php
+   
+    if (!empty($_POST['nome'])) {
+
+        if (cadastrarProdutos($_POST)) { ?>
+
+            <script language='javascript'>
+                swal.fire({
+                    icon: "success",
+                    text: "Feito com Sucesso!",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "painel.php?r=";
+                    }
+                });
+            </script>
+        <?php } else { ?>
+            <script language='javascript'>
+                swal.fire({
+                    icon: "error",
+                    text: "Ops! Ouve um erro.",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "painel.php?r=";
+                    }
+                });
+            </script>
+    <?php }
+    }
+    ?>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
 
 </body>
+
 
 </html>

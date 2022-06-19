@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/controle.css">
-    <title>Table</title>
+    <title>Tela de Vendas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
 <!-- CSS only -->
@@ -20,7 +20,9 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 </head>
 
-<body>   
+<body>
+<input value="Adicionar" class="btn btn-lg btn-primary center" type="button"></input>   
+<input value="Excluir" class="btn btn-lg btn-primary center" type="button"></input>
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -92,7 +94,7 @@
             </div>
         </div>
         <div class="col py-3">
-            <h1>Controle de Vendas</h1>
+            <h1>Tela de vendas</h1>
         <hr>
     
         <table>
