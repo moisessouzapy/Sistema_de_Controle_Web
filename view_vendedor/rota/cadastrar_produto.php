@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/controle.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Cadastrar produtos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
 <body>
+    <?php
+    include 'functions.php';
 
+    ?>
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -121,7 +125,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
-                                        <input type="submit" class="btn btn-primary" value="Enviar" onclick="cadastrarProdutos();">
+                                        <input type="submit" class="btn btn-primary" value="Enviar" onclick="">
                                     </div>
                                 </form>
                             </div>
@@ -144,11 +148,13 @@
                             <th>Valor de Venda</th>
                             <th>Quantidade</th>
                             <th>Data do cadastro</th>
+                            <th>Editar</th>
+                            <th>Apagar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($result as $value) : 
-                            ?>
+                        <?php foreach ($result as $value) :
+                        ?>
                             <tr>
                                 <td><?php echo substr($value->_id, -5); ?></td>
                                 <td><?php echo $value->nome; ?></td>
@@ -157,6 +163,17 @@
                                 <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?></td>
                                 <td><?php echo $value->estoque; ?></td>
                                 <td><?php echo $value->data; ?></td>
+                                <td>
+                                    <button onclick="" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@cadastrar">
+                                        <a href="?updateid=<?php echo $value->_id ?>">
+                                            EDITAR
+                                        </a>
+                                    </button>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="?delete=<?php echo $value->nome ?>">APAGAR</a>
+                                    
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -165,8 +182,9 @@
         </div>
     </div>
     <?php
-    include 'functions.php';
-
+    if (isset($_GET['delete'])) {
+        apagarProduto($_GET['delete']);
+    }
     if (!empty($_POST['nome'])) {
 
         if (cadastrarProdutos($_POST)) { ?>
@@ -178,7 +196,7 @@
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "painel.php?r=";
+                        window.location.href = "cadastrar_produto.php";
                     }
                 });
             </script>
@@ -190,7 +208,7 @@
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "painel.php?r=";
+                        window.location.href = "cadastrar_produto.php";
                     }
                 });
             </script>

@@ -1,7 +1,6 @@
 <?php
 
-function cadastrarProdutos($dados)
-{
+function cadastrarProdutos($dados){
     include '../../db/conexao_produtos.php';
     require '../../vendor/autoload.php';
 
@@ -12,8 +11,6 @@ function cadastrarProdutos($dados)
     $custoProduto = $dados['custoProduto'];
     $valorVenda = $dados['valorVenda'];
     $estoque = $dados['estoque'];
-    var_dump($data);
-    var_dump($dt);
 
     $result = $db->insertOne([
         'nome' => $nome,
@@ -23,4 +20,15 @@ function cadastrarProdutos($dados)
         'valorVenda' => $valorVenda,
         'estoque' => $estoque,
     ]);
-}
+
+    return $result;
+};
+
+function apagarProduto($nome) {
+    include '../../db/conexao_produtos.php';
+
+    $result = $db->deleteOne([
+        'nome' => $nome
+    ]);
+    return $result;
+};
