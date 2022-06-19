@@ -1,8 +1,9 @@
 <?php
 
-function cadastrarProdutos($dados){
+function cadastrarProdutos($dados)
+{
     include '../../db/conexao_produtos.php';
-    require '../../vendor/autoload.php';
+
 
     $nome = $dados['nome'];
     $data = new DateTime("now", new DateTimeZone('America/Bahia'));
@@ -24,7 +25,8 @@ function cadastrarProdutos($dados){
     return $result;
 };
 
-function apagarProduto($nome) {
+function apagarProduto($nome)
+{
     include '../../db/conexao_produtos.php';
 
     $result = $db->deleteOne([
@@ -32,3 +34,30 @@ function apagarProduto($nome) {
     ]);
     return $result;
 };
+
+function editarProdutos($dados)
+{
+    include '../../db/conexao_produtos.php';
+
+    $nome = $dados['nome'];
+    $fornecedor = $dados['fornecedor'];
+    $custoProduto = $dados['custoProduto'];
+    $valorVenda = $dados['valorVenda'];
+    $estoque = $dados['estoque'];
+
+    $result = $db->updateOne(
+        ['nome' => $nome],
+        [
+            '$set' =>
+            [
+                'nome' => $nome,
+                'fornecedor' => $fornecedor,
+                'custoProduto' => $custoProduto,
+                'valorVenda' => $valorVenda,
+                'estoque' => $estoque,
+            ]
+        ]
+    );
+
+    return $result;
+}

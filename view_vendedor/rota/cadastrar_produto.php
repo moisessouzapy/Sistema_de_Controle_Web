@@ -102,7 +102,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="">
+                                <form method="post" action="?r=add">
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Nome:</label>
                                         <input type="text" class="form-control" id="nome" name="nome" required>
@@ -125,7 +125,48 @@
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
-                                        <input type="submit" class="btn btn-primary" value="Enviar" onclick="">
+                                        <input type="submit" class="btn btn-primary" value="Enviar">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="cadModalLabel">Editar Produto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="?r=update">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nome: </label>
+                                        <input type="text" class="form-control nome" id="nome" name="nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Fornecedor:</label>
+                                        <input type="text" class="form-control fornecedor" id="fornecedor" name="fornecedor" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Custo do Produto:</label>
+                                        <input type="text" class="form-control custoProduto" id="custoProduto" name="custoProduto" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Valor de venda:</label>
+                                        <input type="text" class="form-control valorVenda" id="valorVenda" name="valorVenda" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Estoque:</label>
+                                        <input type="text" class="form-control estoque" id="Estoque" name="estoque" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
+                                        <input type="submit" class="btn btn-primary" value="Enviar">
                                     </div>
                                 </form>
                             </div>
@@ -164,15 +205,13 @@
                                 <td><?php echo $value->estoque; ?></td>
                                 <td><?php echo $value->data; ?></td>
                                 <td>
-                                    <button onclick="" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@cadastrar">
-                                        <a href="?updateid=<?php echo $value->_id ?>">
-                                            EDITAR
-                                        </a>
+                                    <button data-toggle="modal" data-target="#editModal" data-nome="<?php echo $value->nome; ?>" data-fornecedor="<?php echo $value->fornecedor; ?>" data-custoproduto="<?php echo number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?>" data-valorvenda="<?php echo number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?>" data-estoque="<?php echo $value->estoque; ?>" class="btn btn-info">
+                                        EDITAR
                                     </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" href="?delete=<?php echo $value->nome ?>">APAGAR</a>
-                                    
+                                    <a class=" btn btn-danger" href="?delete=<?php echo $value->nome ?>">APAGAR</a>
+
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -181,72 +220,130 @@
             </div>
         </div>
     </div>
+
     <?php
-    if (isset($_GET['delete'])) {
-      if(apagarProduto($_GET['delete'])) {
-        ?>
 
-            <script language='javascript'>
-                swal.fire({
-                    icon: "success",
-                    text: "Feito com Sucesso!",
-                    type: "success"
-                }).then(okay => {
-                    if (okay) {
-                        window.location.href = "cadastrar_produto.php";
-                    }
-                });
-            </script>
-        <?php } else { ?>
-            <script language='javascript'>
-                swal.fire({
-                    icon: "error",
-                    text: "Ops! Ouve um erro.",
-                    type: "success"
-                }).then(okay => {
-                    if (okay) {
-                        window.location.href = "cadastrar_produto.php";
-                    }
-                });
-            </script>
-    <?php }
-      };
+    switch ($_GET['r']) {
+        case 'add':
+            if (!empty($_POST['nome'])) {
 
-    if (!empty($_POST['nome'])) {
+                if (cadastrarProdutos($_POST)) { ?>
 
-        if (cadastrarProdutos($_POST)) { ?>
+                    <script language='javascript'>
+                        swal.fire({
+                            icon: "success",
+                            text: "Feito com Sucesso!",
+                            type: "success"
+                        }).then(okay => {
+                            if (okay) {
+                                window.location.href = "cadastrar_produto.php";
+                            }
+                        });
+                    </script>
+                <?php } else { ?>
+                    <script language='javascript'>
+                        swal.fire({
+                            icon: "error",
+                            text: "Ops! Ouve um erro.",
+                            type: "success"
+                        }).then(okay => {
+                            if (okay) {
+                                window.location.href = "cadastrar_produto.php";
+                            }
+                        });
+                    </script>
+                <?php }
+            }
+            break;
 
-            <script language='javascript'>
-                swal.fire({
-                    icon: "success",
-                    text: "Feito com Sucesso!",
-                    type: "success"
-                }).then(okay => {
-                    if (okay) {
-                        window.location.href = "cadastrar_produto.php";
-                    }
-                });
-            </script>
-        <?php } else { ?>
-            <script language='javascript'>
-                swal.fire({
-                    icon: "error",
-                    text: "Ops! Ouve um erro.",
-                    type: "success"
-                }).then(okay => {
-                    if (okay) {
-                        window.location.href = "cadastrar_produto.php";
-                    }
-                });
-            </script>
-    <?php }
+        case 'update':
+            if (!empty($_POST['nome'])) {
+
+                if (editarProdutos($_POST)) { ?>
+
+                    <script language='javascript'>
+                        swal.fire({
+                            icon: "success",
+                            text: "Feito com Sucesso!",
+                            type: "success"
+                        }).then(okay => {
+                            if (okay) {
+                                window.location.href = "cadastrar_produto.php";
+                            }
+                        });
+                    </script>
+                <?php } else { ?>
+                    <script language='javascript'>
+                        swal.fire({
+                            icon: "error",
+                            text: "Ops! Ouve um erro.",
+                            type: "success"
+                        }).then(okay => {
+                            if (okay) {
+                                window.location.href = "cadastrar_produto.php";
+                            }
+                        });
+                    </script>
+            <?php }
+            }
+            break;
+        default:
+            # code...
+            break;
     }
+
+    if (isset($_GET['delete'])) {
+        if (apagarProduto($_GET['delete'])) {
+            ?>
+
+            <script language='javascript'>
+                swal.fire({
+                    icon: "success",
+                    text: "Feito com Sucesso!",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "cadastrar_produto.php";
+                    }
+                });
+            </script>
+        <?php } else { ?>
+            <script language='javascript'>
+                swal.fire({
+                    icon: "error",
+                    text: "Ops! Ouve um erro.",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "cadastrar_produto.php";
+                    }
+                });
+            </script>
+    <?php }
+    };
     ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
-
+    <script language="javascript">
+        $('#editModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var nome = button.data('nome')
+            var fornecedor = button.data('fornecedor')
+            var custoProduto = button.data('custoproduto')
+            var valorVenda = button.data('valorvenda')
+            var estoque = button.data('estoque')
+            console.log(valorVenda)
+            // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-body .nome').val(nome)
+            modal.find('.modal-body .fornecedor').val(fornecedor)
+            modal.find('.modal-body .custoProduto').val(custoProduto)
+            modal.find('.modal-body .valorVenda').val(valorVenda)
+            modal.find('.modal-body .estoque').val(estoque)
+        })
     </script>
 
 </body>
