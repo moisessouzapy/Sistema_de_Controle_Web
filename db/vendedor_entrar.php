@@ -1,9 +1,9 @@
 <?php 
 session_start();
-include ('../db/conexao_vendedor.php');
+include ('conexao_vendedor.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])) {
-	header('Location: vendedor.php');
+	header('Location: ../view_vendedor/vendedor.php');
 	exit();
 }
  
@@ -26,12 +26,12 @@ $result = $db->findOne([
  
 if(empty($result)) {
 	$_SESSION['nao_autenticado'] = true;
-	header('Location: vendedor.php');
+	header('Location: ../view_vendedor/vendedor.php');
 	exit();
 
 } else {
 	$_SESSION['usuario'] = $usuario;
-	header('Location: painel_vendedor.php');
+	header('Location: ../view_vendedor/painel_vendedor.php');
 	exit();
 
 }

@@ -1,9 +1,9 @@
 <?php 
 session_start();
-include ('../db/conexao_gerente.php');
+include ('conexao_gerente.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])) {
-	header('Location: gerente.php');
+	header('Location: ../view_gerente/gerente.php');
 	exit();
 }
  
@@ -25,10 +25,10 @@ $result = $db->findOne([
  
 if(empty($result)) {
 	$_SESSION['nao_autenticado'] = true;
-	header('Location: gerente.php');
+	header('Location: ../view_gerente/gerente.php');
 	exit();
 } else {
 	$_SESSION['usuario'] = $usuario;
-	header('Location: painel_gerente.php');
+	header('Location: ../view_gerente/painel_gerente.php');
 	exit();
 }
