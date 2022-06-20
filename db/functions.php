@@ -2,7 +2,7 @@
 
 function cadastrarProdutos($dados)
 {
-    include '../../db/conexao_produtos.php';
+    include 'conexao_produtos.php';
 
 
     $nome = $dados['nome'];
@@ -27,7 +27,7 @@ function cadastrarProdutos($dados)
 
 function apagarProduto($nome)
 {
-    include '../../db/conexao_produtos.php';
+    include 'conexao_produtos.php';
 
     $result = $db->deleteOne([
         'nome' => $nome
@@ -37,7 +37,7 @@ function apagarProduto($nome)
 
 function editarProdutos($dados)
 {
-    include '../../db/conexao_produtos.php';
+    include 'conexao_produtos.php';
 
     $nome = $dados['nome'];
     $fornecedor = $dados['fornecedor'];
