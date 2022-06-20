@@ -61,3 +61,6 @@ function editarProdutos($dados)
 
     return $result;
 }
+
+$produtos = array();
+$quantidade = array();
