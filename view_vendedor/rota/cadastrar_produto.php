@@ -167,7 +167,7 @@
                 $result = $db->find()->toArray();
 
                 ?>
-                    <table>
+                    <table class="table_cadastrar">
                         <thead>
                             <tr id="header">
                                 <th>id</th>
@@ -206,9 +206,6 @@
                     </table>
             </div>
         </div>
-    </div>
-    <div style="margin: 1000px;">
-a
     </div>
 
     <?php

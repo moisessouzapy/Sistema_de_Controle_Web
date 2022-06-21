@@ -113,7 +113,8 @@ p {
 
 /* vendedor */
 #vendedor{
-  background-image: url('/img/vendedor1.png');
+  background: black;
+  /* background-image: url('/img/vendedor1.png'); */
 }
 #vendedor h2 a{
   color: black;
