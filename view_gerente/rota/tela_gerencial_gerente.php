@@ -76,22 +76,13 @@
       </div>
       <div class="col py-3">
         <h1>Tela Gerencial</h1>
-
-
-
-
-        <hr>
-
         <div class="container grafico">
           <div class="grafico">
             <div id="chartdiv">
               <?php include "../../graf.php"; ?>
-                         
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>

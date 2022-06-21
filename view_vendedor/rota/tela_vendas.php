@@ -139,6 +139,10 @@
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> df9c24d01d28ee80838d8275c9100399fcc6988c
         <div class="col py-3">
             <h1>Tela de vendas</h1>
         <hr>
@@ -169,6 +173,15 @@
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+<<<<<<< HEAD
+=======
+
+                </table>
+        </div>
+=======
+>>>>>>> 8a5e29eee8a77c4f8f7a97206361c698abef730a
+    </div>
+>>>>>>> df9c24d01d28ee80838d8275c9100399fcc6988c
 
                 </table>
 </body>

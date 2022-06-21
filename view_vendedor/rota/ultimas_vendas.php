@@ -86,6 +86,7 @@
 
                 <table class="table_ultimas">
                     <thead>
+                      
                         <tr id="header">
                             <th>Código do Pedido</th>
                             <th>Produtos</th>
