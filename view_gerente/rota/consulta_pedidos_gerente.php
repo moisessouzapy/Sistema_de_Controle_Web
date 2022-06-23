@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/controle.css">
+    <link rel="stylesheet" href="../../css/controle_table_gerente.css">
     <title>Consulta de produtos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
@@ -81,7 +81,7 @@
                 $result = $db->find()->toArray();
                 ?>
 
-                <table>
+                <table class="table_consulta">
                     <thead>
                         <tr id="header">
                             <th>Código do Pedido</th>

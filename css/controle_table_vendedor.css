@@ -6,17 +6,42 @@ body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100%;
+    overflow: hidden;
 }
-
-table {
+.table_vendas {
     display: block;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 85%;
+    top: 65%;
     transform: translate(-50%, -50%);
     border-collapse: collapse;
-    width: 800px;
-    height: 200px;
+    width: 85%;
+    height: 66%;
+    overflow-y: scroll;;
+}
+
+.table_cadastrar {
+    display: block;
+    position: absolute;
+    left: 60%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    width: 85%;
+    height: 66%;
+    overflow-y: scroll;;
+}
+
+.table_ultimas {
+    display: block;
+    position: absolute;
+    left: 80%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    width: 85%;
+    height: 60%;
+    overflow-y: scroll;
 }
 
 tr {
@@ -27,7 +52,7 @@ tr {
 
 th,
 td {
-    padding: 12px;
+    padding: 20px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -35,6 +60,7 @@ td {
 #header {
     background-color: #0994B8;
     color: #fff;
+    /* position: absolute; */
 }
 
 h1 {

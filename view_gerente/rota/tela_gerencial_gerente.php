@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/controle.css">
+  <link rel="stylesheet" href="../../css/controle_table_gerente.css">
   <title>Table</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
@@ -76,22 +76,13 @@
       </div>
       <div class="col py-3">
         <h1>Tela Gerencial</h1>
-
-
-
-
-        <hr>
-
         <div class="container grafico">
           <div class="grafico">
             <div id="chartdiv">
               <?php include "../../graf.php"; ?>
-                         
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>

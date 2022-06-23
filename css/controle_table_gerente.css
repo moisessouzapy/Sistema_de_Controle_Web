@@ -1,29 +1,46 @@
+body,html {
+    height: 10px;
+}
 body {
     padding: 0px;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    overflow: hidden;
 }
 
-table {
+.table_consulta {
+    display: block;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 80%;
+    top: 60%;
     transform: translate(-50%, -50%);
     border-collapse: collapse;
-    width: 800px;
-    height: 200px;
-    border: 1px solid #bdc3c7;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    height: 75%;
+    overflow-y: scroll;
+}
+.table_controle {
+    display: block;
+    position: absolute;
+    left: 68%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    width: 85%;
+    height: 80%;
+    overflow-y: scroll;
 }
 
 tr {
     transition: all .2s ease-in;
     cursor: pointer;
+    background: white;
 }
 
 th,
 td {
-    padding: 12px;
+    padding: 25px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -31,6 +48,7 @@ td {
 #header {
     background-color: #0994B8;
     color: #fff;
+    /* position: absolute; */
 }
 
 h1 {
@@ -52,3 +70,13 @@ tr:hover {
         width: 90%;
     }
 }
+.grafico{
+    margin-top: 20px;
+    background: #fff;
+
+}
+
+#chartdiv {
+    width: 100%;
+    height: 500px;
+  }

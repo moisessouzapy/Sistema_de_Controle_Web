@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/controle.css">
+    <link rel="stylesheet" href="../../css/controle_table_gerente.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Table</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
@@ -77,7 +77,7 @@
                 include '../../db/conexao_produtos.php';
                 $result = $db->find()->toArray();
                 ?>
-                <table>
+                <table class="table_controle">
                     <thead>
                         <tr id="header">
                             <th>id</th>
