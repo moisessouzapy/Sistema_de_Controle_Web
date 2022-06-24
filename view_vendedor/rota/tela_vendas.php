@@ -178,11 +178,12 @@
           </thead>
           <tbody id="tbody-venda">
           </tbody>
-        </table>
-        <div class="d-flex m-4">
+          <div class="d-flex m-4">
           <h3 class="m-1">O valor total é: </h3>
           <input type="text" disabled id="valor-total">
         </div>
+        </table>
+
 
       </div>
     </div>

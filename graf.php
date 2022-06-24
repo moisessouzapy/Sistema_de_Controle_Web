@@ -84,19 +84,19 @@ series.columns.template.adapters.add("stroke", function(stroke, target) {
 
 // Set data
 var data = [{
-  country: "Disciplina 1",
+  country: "Produto 1",
   value: 8.2
 }, {
-  country: "Disciplina 2",
+  country: "Produto 2",
   value: 4.1
 }, {
-  country: "Disciplina 3",
+  country: "Produto 3",
   value: 9.6
 }, {
-  country: "Disciplina 4",
+  country: "Produto 4",
   value: 7.2
 }, {
-  country: "Disciplina 5",
+  country: "Produto 5",
   value: 5
 }];
 
