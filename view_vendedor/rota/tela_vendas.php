@@ -83,7 +83,6 @@
 
         <?php
         include '../../db/conexao_produtos.php';
-        include '../model/pedidos.php';
         $result = $db->find()->toArray();
         ?>
 
@@ -116,57 +115,62 @@
             </div>
           </div>
         </form>
+
         <?php
-
-        // switch ($_POST['r']) {
-        //   case 'add':
-        //     $ped = new Pedidos($_POST['produto'], $_POST['quantidade']);
-
-
-        //     break;
-
-        //   default:
-        //     $ped = new Pedidos($_POST['produto'], $_POST['quantidade']);
-        //     break;
-        // }
-
-        // echo 'ped';
-        // var_dump($ped);
-        // echo 'ped';
+        function cadastarPedidos($dados)
+        {
+          include '../../db/conexao_produtos.php';
 
 
-        // //cadastarPedidos($_POST);
+          $produto = $dados['produto'][0];
+          $quantidade = $dados['quantidade'][0];
+
+          $result = $db->insetOne(
+            [
+              'produto' => $produto,
+              'quantidade' => $quantidade
+            ],
+          );
+          return $result;
+        }
+
+        if (!empty($_POST)) {
+          if (!empty($_POST)) {
+            if (cadastarPedidos($_POST)) { ?>
+              <script language='javascript'>
+                swal.fire({
+                  icon: "success",
+                  text: "Feito com Sucesso!",
+                  type: "success"
+                }).then(okay => {
+                  if (okay) {
+                    window.location.href = "cadastrar_produto.php";
+                  }
+                });
+              </script>
+            <?php } else { ?>
+              <script language='javascript'>
+                swal.fire({
+                  icon: "error",
+                  text: "Ops! Ouve um erro.",
+                  type: "success"
+                }).then(okay => {
+                  if (okay) {
+                    window.location.href = "cadastrar_produto.php";
+                  }
+                });
+              </script>
+        <?php }
+          }
+        }
 
 
-        // function cadastarPedidos()
-        // {
-        //   include '../../db/conexao_produtos.php';
 
-        //   $produtos = array();
-        //   $quantidade = array();
 
-        //   array_push($produtos, $dados['produto']);
-        //   array_push($quantidade, $dados['quantidade']);
 
-        //   $produto = $dados['produto'];
-        //   $quantidade = $dados['quantidade'];
-
-        //   $result = $db->insetOne(
-        //     ['nome' => $nome],
-        //     [
-        //       '$set' =>
-        //       [
-        //         'nome' => $nome,
-        //         'fornecedor' => $fornecedor,
-        //         'custoProduto' => $custoProduto,
-        //         'valorVenda' => $valorVenda,
-        //         'estoque' => $estoque,
-        //       ]
-        //     ]
-        //   );
-        // }
 
         ?>
+
         <table id="tabela-venda">
           <thead>
             <tr>
@@ -179,18 +183,28 @@
           <tbody id="tbody-venda">
           </tbody>
         </table>
+
+
+
         <div class="d-flex m-4">
           <h3 class="m-1">O valor total é: </h3>
           <input type="text" disabled id="valor-total">
         </div>
-
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <form id="finalizar-compra">
+            <input class="btn btn-success btn-finalizar" id="btn-finalizar" form="finalizar-compra" type="submit" value="Finalizar Pedido">
+          </form>
+        </div>
       </div>
     </div>
-
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script language="javascript">
-    const pedido = new Map();
-    pedidos = []
+    pedidos = {
+      'total': 0.0,
+      'pedido': []
+    }
 
     function adicionarProduto() {
       var prodList = document.getElementById('produto')
@@ -201,13 +215,15 @@
       var valueList = document.getElementById('valor')
       var value = valueList.options[valueList.selectedIndex].value
 
-      pedidos.push({
-        'produto': prod,
-        'quantidade': quant,
+      var total = parseFloat(value) * quant;
+      pedidos.total += total;
+      pedidos.pedido.push({
+        'prod_nome': prod,
+        'qnt': quant,
         'valor': value
       })
 
-      // return JSON.stringify(pedidos);
+      console.log(pedidos)
       construirTabela(pedidos)
     }
 
@@ -222,26 +238,69 @@
       var table = document.getElementById('tbody-venda')
       table.innerHTML = ""
 
-      var total = 0.0;
-      for (var i = 0; 0 < data.length; i++) {
-        total += data[i].quantidade * parseFloat(data[i].valor);
+      for (var i = 0; 0 < data.pedido.length; i++) {
+
         var row =
           `<tr>
-            <td>${data[i].produto}</td>
-            <td>${data[i].quantidade}</td> 
-            <td>R$ ${data[i].valor}</td> 
-            <td>R$ ${(data[i].quantidade * parseFloat(data[i].valor)).toFixed(2).replace(".", ",")}</td>
+            <td>${data.pedido[i].prod_nome}</td>
+            <td>${data.pedido[i].qnt}</td> 
+            <td>R$ ${data.pedido[i].valor}</td> 
+            <td>R$ ${(data.pedido[i].qnt * parseFloat(data.pedido[i].valor)).toFixed(2).replace(".", ",")}</td>
         </tr>
         `
+
         table.innerHTML += row
-
-        document.getElementById('valor-total').value = "R$ " + (total).toFixed(2).replace(".", ",")
+        document.getElementById('valor-total').value = "R$ " + (data.total).toFixed(2).replace(".", ",")
       }
-      console.log('cheguri')
-      console.log(total)
     }
+
+    $("#finalizar-compra").submit(function(e) {
+      if (!pedidos.pedido.length == 0) {
+        e.preventDefault();
+        console.log(pedidos)
+        $.ajax({
+          url: '/view_vendedor/rota/inserir.php',
+          type: 'POST',
+          data: {
+            pedidos
+          },
+
+        }).done(function(result) {
+          console.log(result);
+          swal.fire({
+            icon: "success",
+            text: "Feito com Sucesso!",
+            type: "success"
+          }).then(okay => {
+            if (okay) {
+              window.location.href = "tela_vendas.php";
+            }
+          });
+        }).fail(function(result) {
+          swal.fire({
+            icon: "error",
+            text: "Ops! Ouve um erro.",
+            type: "success"
+          }).then(okay => {
+            if (okay) {
+              window.location.href = "tela_vendas.php";
+            }
+          });
+        });
+      } else {
+        e.preventDefault();
+        swal.fire({
+          icon: "error",
+          text: "Ops! Ouve um erro.",
+          type: "success"
+
+        }).then(okay => {
+          if (okay) {
+            window.location.href = "tela_vendas.php";
+          }
+        });
+      }
+    })
   </script>
-
   </body>
-
 </html>
