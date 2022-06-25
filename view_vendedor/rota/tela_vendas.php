@@ -182,19 +182,16 @@
           </thead>
           <tbody id="tbody-venda">
           </tbody>
+          <div class="d-flex m-4">
+            <h3 class="m-1">O valor total é: </h3>
+            <input type="text" disabled id="valor-total">
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <form id="finalizar-compra">
+              <input class="btn btn-success btn-finalizar" id="btn-finalizar" form="finalizar-compra" type="submit" value="Finalizar Pedido">
+            </form>
+          </div>
         </table>
-
-
-
-        <div class="d-flex m-4">
-          <h3 class="m-1">O valor total é: </h3>
-          <input type="text" disabled id="valor-total">
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <form id="finalizar-compra">
-            <input class="btn btn-success btn-finalizar" id="btn-finalizar" form="finalizar-compra" type="submit" value="Finalizar Pedido">
-          </form>
-        </div>
       </div>
     </div>
   </div>

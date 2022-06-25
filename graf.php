@@ -83,14 +83,22 @@ series.columns.template.adapters.add("stroke", function(stroke, target) {
 
 
 // Set data
-var data = [
-  <?php foreach($fetch as $value) : ?>,
-{
-  country: "Disciplina 1",
+var data = [{
+  country: "Produto 1",
   value: 8.2
-},
-<?php endforeach ?>
-];
+}, {
+  country: "Produto 2",
+  value: 4.1
+}, {
+  country: "Produto 3",
+  value: 9.6
+}, {
+  country: "Produto 4",
+  value: 7.2
+}, {
+  country: "Produto 5",
+  value: 5
+}];
 
 xAxis.data.setAll(data);
 series.data.setAll(data);

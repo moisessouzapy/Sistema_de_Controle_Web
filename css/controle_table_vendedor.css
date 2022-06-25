@@ -19,7 +19,13 @@ body {
     height: 66%;
     overflow-y: scroll;;
 }
-
+#tabela-venda{
+    display: block;
+    position: absolute;
+    overflow-y: scroll;;
+    width: 85%;
+    height: 66%;
+}
 .table_cadastrar {
     display: block;
     position: absolute;
