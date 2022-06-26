@@ -23,57 +23,57 @@
 
     ?>
     <div class="carrosel container-fluid px-0">
-      <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-              <span class="fs-5 d-none d-sm-inline">Menu</span>
-            </a>
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li class="nav-item">
-                <a href="/" class="nav-link align-middle px-0">
-                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="/" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Não sei</span></a>
-              </li>
-              <li>
-                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                  <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Perfis</span></a>
-                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                  <li class="w-100">
-                    <a href="/view_gerente/gerente.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Gerente</span></a>
-                  </li>
-                  <li>
-                    <a href="/view_vendedor/vendedor.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Vendedor</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Informações</span> </a>
-                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-              <li>
-                <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Contato</span> </a>
-                  <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Quem somos</span> </a>
-              </li>
-            </ul>
-            <hr>
-            <div class="dropdown pb-4">
-              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                <span class="d-none d-sm-inline mx-1">Perfis</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="../logout_vendedor.php">Sair</a></li>
-              </ul>
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Não sei</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Perfis</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="/view_gerente/gerente.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Gerente</span></a>
+                                </li>
+                                <li>
+                                    <a href="/view_vendedor/vendedor.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Vendedor</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Informações</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li>
+                                    <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Contato</span> </a>
+                                    <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Quem somos</span> </a>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="dropdown pb-4">
+                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                    <span class="d-none d-sm-inline mx-1">Perfis</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                    <li><a class="dropdown-item" href="../logout_vendedor.php">Sair</a></li>
+                                </ul>
+                            </div>
+                </div>
             </div>
-          </div>
-        </div>
             <div class="col py-3">
                 <h1>Cadastro de produtos</h1>
                 <hr>
@@ -101,15 +101,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Custo do Produto:</label>
-                                        <input type="text" class="form-control" id="custoProduto" name="custoProduto" required>
+                                        <input type="number" step="0.01" min="0.01" class="form-control" id="custoProduto" name="custoProduto" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Valor de venda:</label>
-                                        <input type="text" class="form-control" id="valorVenda" name="valorVenda" required>
+                                        <input type="number" step="0.01" min="0.01" class="form-control" id="valorVenda" name="valorVenda" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Estoque:</label>
-                                        <input type="text" class="form-control" id="Estoque" name="estoque" required>
+                                        <input type="number" min="1" value="1" class="form-control" id="Estoque" name="estoque" required>
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
@@ -142,15 +142,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Custo do Produto:</label>
-                                        <input type="text" class="form-control custoProduto" id="custoProduto" name="custoProduto" required>
+                                        <input type="number" step="0.01" class="form-control custoProduto" id="custoProduto" name="custoProduto" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Valor de venda:</label>
-                                        <input type="text" class="form-control valorVenda" id="valorVenda" name="valorVenda" required>
+                                        <input type="number" step="0.01" class="form-control valorVenda" id="valorVenda" name="valorVenda" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Estoque:</label>
-                                        <input type="text" class="form-control estoque" id="Estoque" name="estoque" required>
+                                        <input type="number" min="1" class="form-control estoque" id="Estoque" name="estoque" required>
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Fechar">
@@ -167,118 +167,118 @@
                 $result = $db->find()->toArray();
 
                 ?>
-                    <table class="table_cadastrar">
-                        <thead>
-                            <tr id="header">
-                                <th>id</th>
-                                <th>Produto</th>
-                                <th>Fornecedor</th>
-                                <th>Custo do Produto</th>
-                                <th>Valor de Venda</th>
-                                <th>Quantidade</th>
-                                <th>Data do cadastro</th>
-                                <th>Editar</th>
-                                <th>Apagar</th>
+                <table class="table_cadastrar">
+                    <thead>
+                        <tr id="header">
+                            <th>id</th>
+                            <th>Produto</th>
+                            <th>Fornecedor</th>
+                            <th>Custo do Produto</th>
+                            <th>Valor de Venda</th>
+                            <th>Quantidade</th>
+                            <th>Data do cadastro</th>
+                            <th>Editar</th>
+                            <th>Apagar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($result as $value) :
+                        ?>
+                            <tr>
+                                <td><?php echo substr($value->_id, -5); ?></td>
+                                <td><?php echo $value->nome; ?></td>
+                                <td><?php echo $value->fornecedor; ?></td>
+                                <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?> </td>
+                                <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?></td>
+                                <td><?php echo $value->estoque; ?></td>
+                                <td><?php echo $value->data; ?></td>
+                                <td>
+                                    <button data-toggle="modal" data-target="#editModal" data-nome="<?php echo $value->nome; ?>" data-fornecedor="<?php echo $value->fornecedor; ?>" data-custoproduto="<?php echo number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?>" data-valorvenda="<?php echo number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?>" data-estoque="<?php echo $value->estoque; ?>" class="btn btn-info">
+                                        EDITAR
+                                    </button>
+                                </td>
+                                <td>
+                                    <a class=" btn btn-danger" href="?delete=<?php echo $value->nome ?>">APAGAR</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($result as $value) :
-                            ?>
-                                <tr>
-                                    <td><?php echo substr($value->_id, -5); ?></td>
-                                    <td><?php echo $value->nome; ?></td>
-                                    <td><?php echo $value->fornecedor; ?></td>
-                                    <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?> </td>
-                                    <td><?php echo "R$ " . number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?></td>
-                                    <td><?php echo $value->estoque; ?></td>
-                                    <td><?php echo $value->data; ?></td>
-                                    <td>
-                                        <button data-toggle="modal" data-target="#editModal" data-nome="<?php echo $value->nome; ?>" data-fornecedor="<?php echo $value->fornecedor; ?>" data-custoproduto="<?php echo number_format(floatval(str_replace(",", ".", $value->custoProduto)), 2, ',', ''); ?>" data-valorvenda="<?php echo number_format(floatval(str_replace(",", ".", $value->valorVenda)), 2, ',', ''); ?>" data-estoque="<?php echo $value->estoque; ?>" class="btn btn-info">
-                                            EDITAR
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <a class=" btn btn-danger" href="?delete=<?php echo $value->nome ?>">APAGAR</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
     <?php
 
-    if(!empty($_GET)){
-    switch ($_GET['r']) {
-        case 'add':
-            if (!empty($_POST['nome'])) {
+    if (!empty($_GET)) {
+        switch ($_GET['r']) {
+            case 'add':
+                if (!empty($_POST['nome'])) {
 
-                if (cadastrarProdutos($_POST)) { ?>
+                    if (cadastrarProdutos($_POST)) { ?>
 
-                    <script language='javascript'>
-                        swal.fire({
-                            icon: "success",
-                            text: "Feito com Sucesso!",
-                            type: "success"
-                        }).then(okay => {
-                            if (okay) {
-                                window.location.href = "cadastrar_produto.php";
-                            }
-                        });
-                    </script>
-                <?php } else { ?>
-                    <script language='javascript'>
-                        swal.fire({
-                            icon: "error",
-                            text: "Ops! Ouve um erro.",
-                            type: "success"
-                        }).then(okay => {
-                            if (okay) {
-                                window.location.href = "cadastrar_produto.php";
-                            }
-                        });
-                    </script>
-                <?php }
-            }
-            break;
+                        <script language='javascript'>
+                            swal.fire({
+                                icon: "success",
+                                text: "Feito com Sucesso!",
+                                type: "success"
+                            }).then(okay => {
+                                if (okay) {
+                                    window.location.href = "cadastrar_produto.php";
+                                }
+                            });
+                        </script>
+                    <?php } else { ?>
+                        <script language='javascript'>
+                            swal.fire({
+                                icon: "error",
+                                text: "Ops! Ouve um erro.",
+                                type: "success"
+                            }).then(okay => {
+                                if (okay) {
+                                    window.location.href = "cadastrar_produto.php";
+                                }
+                            });
+                        </script>
+                    <?php }
+                }
+                break;
 
-        case 'update':
-            if (!empty($_POST['nome'])) {
+            case 'update':
+                if (!empty($_POST['nome'])) {
 
-                if (editarProdutos($_POST)) { ?>
+                    if (editarProdutos($_POST)) { ?>
 
-                    <script language='javascript'>
-                        swal.fire({
-                            icon: "success",
-                            text: "Feito com Sucesso!",
-                            type: "success"
-                        }).then(okay => {
-                            if (okay) {
-                                window.location.href = "cadastrar_produto.php";
-                            }
-                        });
-                    </script>
-                <?php } else { ?>
-                    <script language='javascript'>
-                        swal.fire({
-                            icon: "error",
-                            text: "Ops! Ouve um erro.",
-                            type: "success"
-                        }).then(okay => {
-                            if (okay) {
-                                window.location.href = "cadastrar_produto.php";
-                            }
-                        });
-                    </script>
+                        <script language='javascript'>
+                            swal.fire({
+                                icon: "success",
+                                text: "Feito com Sucesso!",
+                                type: "success"
+                            }).then(okay => {
+                                if (okay) {
+                                    window.location.href = "cadastrar_produto.php";
+                                }
+                            });
+                        </script>
+                    <?php } else { ?>
+                        <script language='javascript'>
+                            swal.fire({
+                                icon: "error",
+                                text: "Ops! Ouve um erro.",
+                                type: "success"
+                            }).then(okay => {
+                                if (okay) {
+                                    window.location.href = "cadastrar_produto.php";
+                                }
+                            });
+                        </script>
             <?php }
-            }
-            break;
-        default:
-            # code...
-            break;
-    }
+                }
+                break;
+            default:
+                # code...
+                break;
+        }
     }
     if (isset($_GET['delete'])) {
         if (apagarProduto($_GET['delete'])) {
@@ -334,7 +334,7 @@
         })
     </script>
 
-</body>
+    </body>
 
 
 </html>
