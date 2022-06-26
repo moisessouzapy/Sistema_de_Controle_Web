@@ -49,7 +49,9 @@ body {
     height: 60%;
     overflow-y: scroll;
 }
-
+#tabela_venda {
+    padding: 20px;
+}
 tr {
     transition: all .2s ease-in;
     cursor: pointer;
