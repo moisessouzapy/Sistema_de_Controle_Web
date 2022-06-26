@@ -19,7 +19,8 @@ function cadastrarProdutos($dados)
         'fornecedor' => $fornecedor,
         'custoProduto' => $custoProduto,
         'valorVenda' => $valorVenda,
-        'estoque' => $estoque,
+        'estoque' => intval($estoque),
+        'qnt_vendida' => 0
     ]);
 
     return $result;
@@ -62,5 +63,30 @@ function editarProdutos($dados)
     return $result;
 }
 
-$produtos = array();
-$quantidade = array();
+function apagarPedido($data)
+{
+    include 'conexao_pedidos.php';
+    $dados = $db->findOne(
+        ['data' => $data],
+    );
+
+    $result = $db->deleteOne([
+        'data' => $data
+    ]);
+
+    incrementarEstoque($dados);
+    return $result;
+};
+
+function incrementarEstoque($dados)
+{
+    include 'conexao_produtos.php';
+    foreach ($dados->venda as $infoVenda) {
+        $db->updateOne(
+            ['nome' => $infoVenda['prod_nome']],
+            ['$inc' => [
+                'estoque' => +$infoVenda['qnt'],
+                'qnt_vendida' => -$infoVenda['qnt']] ]
+        );
+    }
+};
