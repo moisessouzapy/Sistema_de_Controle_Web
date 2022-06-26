@@ -77,9 +77,6 @@
       <div class="col py-3">
         <h1>Tela de vendas</h1>
         <hr>
-        <input value="Adicionar" class="btn btn-lg btn-primary center" type="button"></input>
-        <input value="Excluir" class="btn btn-lg btn-primary center" type="button"></input>
-        <hr>
 
         <?php
         include '../../db/conexao_produtos.php';
@@ -115,61 +112,6 @@
             </div>
           </div>
         </form>
-
-        <?php
-        function cadastarPedidos($dados)
-        {
-          include '../../db/conexao_produtos.php';
-
-
-          $produto = $dados['produto'][0];
-          $quantidade = $dados['quantidade'][0];
-
-          $result = $db->insetOne(
-            [
-              'produto' => $produto,
-              'quantidade' => $quantidade
-            ],
-          );
-          return $result;
-        }
-
-        if (!empty($_POST)) {
-          if (!empty($_POST)) {
-            if (cadastarPedidos($_POST)) { ?>
-              <script language='javascript'>
-                swal.fire({
-                  icon: "success",
-                  text: "Feito com Sucesso!",
-                  type: "success"
-                }).then(okay => {
-                  if (okay) {
-                    window.location.href = "cadastrar_produto.php";
-                  }
-                });
-              </script>
-            <?php } else { ?>
-              <script language='javascript'>
-                swal.fire({
-                  icon: "error",
-                  text: "Ops! Ouve um erro.",
-                  type: "success"
-                }).then(okay => {
-                  if (okay) {
-                    window.location.href = "cadastrar_produto.php";
-                  }
-                });
-              </script>
-        <?php }
-          }
-        }
-
-
-
-
-
-
-        ?>
 
         <table id="tabela-venda">
           <thead>

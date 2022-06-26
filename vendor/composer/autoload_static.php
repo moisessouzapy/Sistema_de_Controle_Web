@@ -34,6 +34,7 @@ class ComposerStaticInit13c1cb43c919600fb2c883d4d3cf2b98
         'MongoDB\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
+            1 => __DIR__ . '/..' . '/mongodb/transistor/src',
         ),
         'Jean85\\' => 
         array (
