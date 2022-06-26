@@ -115,7 +115,7 @@
 
         <table id="tabela-venda">
           <thead>
-            <tr>
+            <tr id="tabela_venda">
               <th>Produto</th>
               <th>Quantidade</th>
               <th>Valor</th>

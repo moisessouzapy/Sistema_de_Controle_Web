@@ -83,7 +83,7 @@
 
                 <table class="table_consulta">
                     <thead>
-                        <tr id="header">
+                        <tr id="header_consulta">
                             <th>Código do Pedido</th>
                             <th>Produtos</th>
                             <th>Valor</th>
