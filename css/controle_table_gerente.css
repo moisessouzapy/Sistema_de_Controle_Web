@@ -76,7 +76,18 @@ tr:hover {
 
 }
 
-#chartdiv {
+
+#maisVendido {
     width: 100%;
-    height: 500px;
+    height: 400px;
+}
+
+#mediaVenda {
+    width: 100%;
+    height: 300px;
   }
+
+#maisEstoque {
+    width: 100%;
+    height: 300px;
+}

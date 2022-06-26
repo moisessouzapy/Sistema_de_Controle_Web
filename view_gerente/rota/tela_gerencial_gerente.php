@@ -76,10 +76,30 @@
       </div>
       <div class="col py-3">
         <h1>Tela Gerencial</h1>
+
         <div class="container grafico">
+          <h2>Os 10 produtos mais vendidos</h2>
           <div class="grafico">
-            <div id="chartdiv">
+            <div id="maisVendido">
               <?php include "../../graf.php"; ?>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="container grafico">
+            <h2>Media de vendas</h2>
+            <div class="grafico">
+              <div id="mediaVenda">
+                <?php include "../../graf.php"; ?>
+              </div>
+            </div>
+          </div>
+          <div class="container grafico">
+            <h2>Mais estoque</h2>
+            <div class="grafico">
+              <div id="maisEstoque">
+                <?php include "../../graf.php"; ?>
+              </div>
             </div>
           </div>
         </div>
