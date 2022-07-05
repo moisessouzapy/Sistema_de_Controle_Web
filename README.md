@@ -9,7 +9,7 @@ Sistema criado em html,css,php,js e mongodb com o intuito de gerenciar um contro
 ## ✔️ Técnicas e tecnologias utilizadas
 - `banco de dados`: leitura de dados e escrita no mongodb.
 - `interface grafica`: foi utilizado css,html,amcharts na produção das interfaces.
-- `Visual Studio Code`: foi utilizado a idea do Visual Studio Code
+- `Visual Studio Code`: foi utilizado a ide do Visual Studio Code
 - `git`: foi utilizado o git para trabalho coletivo.
 
 **Para executar este projeto você precisa:**
