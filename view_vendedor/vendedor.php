@@ -18,7 +18,8 @@ session_start();
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/8411fef42f.js" crossorigin="anonymous"></script>
 
 <!-- DATATABLES -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
@@ -37,40 +38,27 @@ session_start();
             <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
               <li class="nav-item">
                 <a href="/" class="nav-link align-middle px-0">
-                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                  <i class="fa fa-home-lg-alt"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                 </a>
               </li>
               <li>
-                <a href="/" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Não sei</span></a>
-              </li>
-              <li>
                 <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                  <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Perfis</span></a>
+                <i class="fas fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">Perfis</span></a>
                 <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                   <li class="w-100">
-                    <a href="/view_gerente/gerente.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Gerente</span></a>
+                    <a href="/view_gerente/gerente.php" class="nav-link px-0"><i class="fas fa-user-alt"></i> <span class="d-none d-sm-inline">Gerente</span></a>
                   </li>
                   <li>
-                    <a href="/view_vendedor/vendedor.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Vendedor</span></a>
+                    <a href="/view_vendedor/vendedor.php" class="nav-link px-0"><i class="far fa-user"></i> <span class="d-none d-sm-inline">Vendedor</span></a>
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Informações</span> </a>
                 <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-              <li>
-                <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Contato</span> </a>
-                  <a href="https://www.invertexto.com/levi" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Quem somos</span> </a>
-              </li>
             </ul>
             <hr>
             <div class="dropdown pb-4">
               <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Breezeicons-actions-22-im-user.svg/1200px-Breezeicons-actions-22-im-user.svg.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
                 <span class="d-none d-sm-inline mx-1">Perfis</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
